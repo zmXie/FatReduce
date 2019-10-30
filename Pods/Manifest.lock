@@ -1,0 +1,26 @@
+PODS:
+  - IQKeyboardManager (6.5.3)
+  - Masonry (1.1.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - Masonry
+  - YYKit
+
+SPEC REPOS:
+  https://cdn.cocoapods.org/:
+    - IQKeyboardManager
+    - Masonry
+    - YYKit
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: c2f901164d56807a35788483584d09fa69192e8e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 3842b32cba3b654e6cca7b77c086269ff5bec894
+
+COCOAPODS: 1.8.4

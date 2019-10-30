@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-FatReduce/Pods-FatReduce-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework

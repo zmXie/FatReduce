@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040B434C23692795008FBA24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B434B23692795008FBA24 /* AppDelegate.m */; };
+		040B434F23692795008FBA24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B434E23692795008FBA24 /* ViewController.m */; };
+		040B435223692795008FBA24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040B435023692795008FBA24 /* Main.storyboard */; };
+		040B435423692798008FBA24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040B435323692798008FBA24 /* Assets.xcassets */; };
+		040B435723692798008FBA24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040B435523692798008FBA24 /* LaunchScreen.storyboard */; };
+		040B435A23692798008FBA24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B435923692798008FBA24 /* main.m */; };
+		040B436223692EC2008FBA24 /* RecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B436123692EC2008FBA24 /* RecordTableViewController.m */; };
+		040B436823693B48008FBA24 /* ChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B436723693B48008FBA24 /* ChartView.m */; };
+		04E24D7B2369839700777AE4 /* UIView+DCKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E24D792369839700777AE4 /* UIView+DCKit.m */; };
+		04E24D7E23699A1300777AE4 /* UIView+DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E24D7D23699A1300777AE4 /* UIView+DatePicker.m */; };
+		3BA33FE41878292DC549E8A3 /* Pods_FatReduce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95801DDF1044C9B41F4DEC41 /* Pods_FatReduce.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		040B434723692795008FBA24 /* FatReduce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FatReduce.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		040B434A23692795008FBA24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		040B434B23692795008FBA24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		040B434D23692795008FBA24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		040B434E23692795008FBA24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		040B435123692795008FBA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		040B435323692798008FBA24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		040B435623692798008FBA24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		040B435823692798008FBA24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040B435923692798008FBA24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		040B436023692EC2008FBA24 /* RecordTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordTableViewController.h; sourceTree = "<group>"; };
+		040B436123692EC2008FBA24 /* RecordTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordTableViewController.m; sourceTree = "<group>"; };
+		040B436623693B48008FBA24 /* ChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartView.h; sourceTree = "<group>"; };
+		040B436723693B48008FBA24 /* ChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChartView.m; sourceTree = "<group>"; };
+		04E24D792369839700777AE4 /* UIView+DCKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DCKit.m"; sourceTree = "<group>"; };
+		04E24D7A2369839700777AE4 /* UIView+DCKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DCKit.h"; sourceTree = "<group>"; };
+		04E24D7C23699A1300777AE4 /* UIView+DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DatePicker.h"; sourceTree = "<group>"; };
+		04E24D7D23699A1300777AE4 /* UIView+DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DatePicker.m"; sourceTree = "<group>"; };
+		62D4BEC2C286A30CAE477580 /* Pods-FatReduce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatReduce.debug.xcconfig"; path = "Target Support Files/Pods-FatReduce/Pods-FatReduce.debug.xcconfig"; sourceTree = "<group>"; };
+		95801DDF1044C9B41F4DEC41 /* Pods_FatReduce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FatReduce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8977FF8BDA67A358933384 /* Pods-FatReduce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FatReduce.release.xcconfig"; path = "Target Support Files/Pods-FatReduce/Pods-FatReduce.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		040B434423692795008FBA24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA33FE41878292DC549E8A3 /* Pods_FatReduce.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		040B433E23692795008FBA24 = {
+			isa = PBXGroup;
+			children = (
+				040B434923692795008FBA24 /* FatReduce */,
+				040B434823692795008FBA24 /* Products */,
+				CD8E60E5A67751EC0CBE44FB /* Pods */,
+				C4EBF814E251AA059C0DF969 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		040B434823692795008FBA24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				040B434723692795008FBA24 /* FatReduce.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		040B434923692795008FBA24 /* FatReduce */ = {
+			isa = PBXGroup;
+			children = (
+				040B434A23692795008FBA24 /* AppDelegate.h */,
+				040B434B23692795008FBA24 /* AppDelegate.m */,
+				040B434D23692795008FBA24 /* ViewController.h */,
+				040B434E23692795008FBA24 /* ViewController.m */,
+				040B436023692EC2008FBA24 /* RecordTableViewController.h */,
+				040B436123692EC2008FBA24 /* RecordTableViewController.m */,
+				040B436623693B48008FBA24 /* ChartView.h */,
+				040B436723693B48008FBA24 /* ChartView.m */,
+				04E24D7A2369839700777AE4 /* UIView+DCKit.h */,
+				04E24D792369839700777AE4 /* UIView+DCKit.m */,
+				04E24D7C23699A1300777AE4 /* UIView+DatePicker.h */,
+				04E24D7D23699A1300777AE4 /* UIView+DatePicker.m */,
+				040B435023692795008FBA24 /* Main.storyboard */,
+				040B435323692798008FBA24 /* Assets.xcassets */,
+				040B435523692798008FBA24 /* LaunchScreen.storyboard */,
+				040B435823692798008FBA24 /* Info.plist */,
+				040B435923692798008FBA24 /* main.m */,
+			);
+			path = FatReduce;
+			sourceTree = "<group>";
+		};
+		C4EBF814E251AA059C0DF969 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95801DDF1044C9B41F4DEC41 /* Pods_FatReduce.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD8E60E5A67751EC0CBE44FB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62D4BEC2C286A30CAE477580 /* Pods-FatReduce.debug.xcconfig */,
+				ED8977FF8BDA67A358933384 /* Pods-FatReduce.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		040B434623692795008FBA24 /* FatReduce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 040B435D23692798008FBA24 /* Build configuration list for PBXNativeTarget "FatReduce" */;
+			buildPhases = (
+				D0562200D0DEDF8F59C54301 /* [CP] Check Pods Manifest.lock */,
+				040B434323692795008FBA24 /* Sources */,
+				040B434423692795008FBA24 /* Frameworks */,
+				040B434523692795008FBA24 /* Resources */,
+				A435AB40E23A0475725494FC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FatReduce;
+			productName = FatReduce;
+			productReference = 040B434723692795008FBA24 /* FatReduce.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		040B433F23692795008FBA24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = xzm;
+				TargetAttributes = {
+					040B434623692795008FBA24 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 040B434223692795008FBA24 /* Build configuration list for PBXProject "FatReduce" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 040B433E23692795008FBA24;
+			productRefGroup = 040B434823692795008FBA24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				040B434623692795008FBA24 /* FatReduce */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		040B434523692795008FBA24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				040B435723692798008FBA24 /* LaunchScreen.storyboard in Resources */,
+				040B435423692798008FBA24 /* Assets.xcassets in Resources */,
+				040B435223692795008FBA24 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A435AB40E23A0475725494FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FatReduce/Pods-FatReduce-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FatReduce/Pods-FatReduce-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FatReduce/Pods-FatReduce-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0562200D0DEDF8F59C54301 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FatReduce-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		040B434323692795008FBA24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04E24D7E23699A1300777AE4 /* UIView+DatePicker.m in Sources */,
+				040B436223692EC2008FBA24 /* RecordTableViewController.m in Sources */,
+				040B434F23692795008FBA24 /* ViewController.m in Sources */,
+				040B436823693B48008FBA24 /* ChartView.m in Sources */,
+				040B435A23692798008FBA24 /* main.m in Sources */,
+				04E24D7B2369839700777AE4 /* UIView+DCKit.m in Sources */,
+				040B434C23692795008FBA24 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		040B435023692795008FBA24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040B435123692795008FBA24 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		040B435523692798008FBA24 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				040B435623692798008FBA24 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		040B435B23692798008FBA24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		040B435C23692798008FBA24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		040B435E23692798008FBA24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62D4BEC2C286A30CAE477580 /* Pods-FatReduce.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58AX2C9KK3;
+				INFOPLIST_FILE = FatReduce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xzm.FatReduce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		040B435F23692798008FBA24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED8977FF8BDA67A358933384 /* Pods-FatReduce.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58AX2C9KK3;
+				INFOPLIST_FILE = FatReduce/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.xzm.FatReduce;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		040B434223692795008FBA24 /* Build configuration list for PBXProject "FatReduce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040B435B23692798008FBA24 /* Debug */,
+				040B435C23692798008FBA24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		040B435D23692798008FBA24 /* Build configuration list for PBXNativeTarget "FatReduce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				040B435E23692798008FBA24 /* Debug */,
+				040B435F23692798008FBA24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 040B433F23692795008FBA24 /* Project object */;
+}
