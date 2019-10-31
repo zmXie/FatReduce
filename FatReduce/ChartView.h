@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ChartView : UIView
 
+@property (nonatomic,strong) void(^clickFlagBlock)(NSDictionary *dataDic);
+
 - (void)setDataArray:(NSArray *)dataArray;
 
 @end

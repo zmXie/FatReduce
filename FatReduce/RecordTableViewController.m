@@ -37,6 +37,20 @@
 
     self.dateTf.delegate = self;
     self.dateTf.text = [self stringForDate:[NSDate date]];
+    
+    if (self.editDic) {
+        self.dateTf.text = _editDic[@"date"];
+        self.weightTf.text = _editDic[@"weight"];
+        self.BMITf.text = _editDic[@"BMI"];
+        self.fatTf.text = _editDic[@"fat"];
+        self.muscleTf.text = _editDic[@"muscle"];
+        self.metaTf.text = _editDic[@"meta"];
+        self.waterTf.text = _editDic[@"water"];
+        self.fatWeightTf.text = _editDic[@"fatWeight"];
+        self.proteinTf.text = _editDic[@"protein"];
+        self.boneTf.text = _editDic[@"bone"];
+        self.degreaseWeightTf.text = _editDic[@"degreaseWeight"];
+    }
 }
 
 - (IBAction)completeClick:(id)sender
@@ -70,23 +84,38 @@
         } else {
             recordArray = @[].mutableCopy;
         }
-        [recordArray addObject:@{@"date":self.dateTf.text,
-                                 @"weight":self.weightTf.text,
-                                 @"BMI":self.BMITf.text,
-                                 @"fat":self.fatTf.text,
-                                 @"muscle":self.muscleTf.text,
-                                 @"meta":self.metaTf.text,
-                                 @"water":self.waterTf.text,
-                                 @"fatWeight":self.fatWeightTf.text,
-                                 @"protein":self.proteinTf.text,
-                                 @"bone":self.boneTf.text,
-                                 @"degreaseWeight":self.degreaseWeightTf.text}];
+        if (_editDic) { //编辑
+            [recordArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if ([obj[@"id"] isEqualToValue:self.editDic[@"id"]]) {
+                    [recordArray replaceObjectAtIndex:idx withObject:[self createDataDicWithId:obj[@"id"]]];
+                    *stop = YES;
+                }
+            }];
+        } else { //新增
+            [recordArray addObject:[self createDataDicWithId:@([[NSDate date] timeIntervalSince1970])]];
+        }
         [[NSUserDefaults standardUserDefaults] setObject:recordArray forKey:RecordKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self.navigationController popViewControllerAnimated:YES];
         
         !_refreshBlock ?: _refreshBlock();
     }
+}
+
+- (NSDictionary *)createDataDicWithId:(NSValue *)valueId
+{
+    return @{@"id":valueId,
+             @"date":self.dateTf.text,
+             @"weight":self.weightTf.text,
+             @"BMI":self.BMITf.text,
+             @"fat":self.fatTf.text,
+             @"muscle":self.muscleTf.text,
+             @"meta":self.metaTf.text,
+             @"water":self.waterTf.text,
+             @"fatWeight":self.fatWeightTf.text,
+             @"protein":self.proteinTf.text,
+             @"bone":self.boneTf.text,
+             @"degreaseWeight":self.degreaseWeightTf.text};
 }
 
 - (void)showToast:(NSString *)text
@@ -122,6 +151,7 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
+    [self.view endEditing:YES];
     __weak typeof(self)weakSelf = self;
     [self.view showDatePickerWithFinishBlock:^(NSDate *date) {
         weakSelf.dateTf.text = [weakSelf stringForDate:date];

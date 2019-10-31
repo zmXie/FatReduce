@@ -51,18 +51,19 @@
     
     NSArray *records = [[NSUserDefaults standardUserDefaults] objectForKey:RecordKey];
     if (records.count == 0) {
-        [self pushRecord:NO];
+        [self pushRecord:NO editDic:nil];
     }
 }
 
 - (IBAction)addRecord:(id)sender
 {
-    [self pushRecord:YES];
+    [self pushRecord:YES editDic:nil];
 }
 
-- (void)pushRecord:(BOOL)animated
+- (void)pushRecord:(BOOL)animated editDic:(NSDictionary *)editDic
 {
     RecordTableViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"RecordTableViewController"];
+    vc.editDic = editDic;
     vc.refreshBlock = ^{
         [self refreshWithIndex:self->_lastSelectBtn.tag-100];
     };
@@ -103,7 +104,7 @@
             break;
         case 4:
             key = @"meta";
-            type = @"";
+            type = @"大卡/天";
             break;
         case 5:
             key = @"water";
@@ -131,11 +132,16 @@
     }
     NSMutableArray *dataArray = @[].mutableCopy;
     NSArray *records = [[NSUserDefaults standardUserDefaults] objectForKey:RecordKey];
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    if (descriptor) {
+        records = [records sortedArrayUsingDescriptors:@[descriptor]];
+    }
     [records enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSMutableDictionary *dic = @{}.mutableCopy;
         [dic setObject:obj[key] forKey:@"value"];
         [dic setObject:obj[@"date"] forKey:@"time"];
         [dic setObject:type forKey:@"type"];
+        [dic setObject:obj forKey:@"origin"];
         [dataArray addObject:dic];
     }];
     [self.chartView setDataArray:dataArray];
@@ -144,7 +150,11 @@
 - (ChartView *)chartView
 {
     if (!_chartView) {
-        _chartView = [[ChartView alloc]initWithFrame:CGRectMake(0, 100, W(self.view), 250)];
+        _chartView = [[ChartView alloc]initWithFrame:CGRectMake(0, 130, W(self.view), 300)];
+        __weak typeof(self)weakSelf = self;
+        _chartView.clickFlagBlock = ^(NSDictionary * _Nonnull dataDic) {
+            [weakSelf pushRecord:YES editDic:dataDic[@"origin"]];
+        };
     }
     return _chartView;
 }

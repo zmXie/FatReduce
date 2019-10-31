@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RecordTableViewController : UITableViewController
 
+@property (nonatomic,strong) NSDictionary *editDic;
 @property (nonatomic,strong) dispatch_block_t refreshBlock;
 
 @end

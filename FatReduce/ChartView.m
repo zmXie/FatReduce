@@ -62,29 +62,39 @@ static CGFloat const mw = 30;
             [self addTimeLabelWithText:dataArray[i][@"time"] center:CGPointMake(W(self)/2.f, H(self) - mb/2.f)];
         }
         if (i == 0) {
-            UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, H(self), W(self), 0.5)];
+            UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, H(self) - mb, W(self), 0.5)];
             line.backgroundColor = RGB(216, 216, 216);
             [self addSubview:line];
         }
     }];
-    //添加首尾点
-    [_pointArray insertObject:[NSValue valueWithCGPoint:CGPointMake(0, CGRectGetHeight(self.bounds)/2.f)] atIndex:0];
-    [_pointArray addObject:[NSValue valueWithCGPoint:CGPointMake(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)/2.f)]];
-    //画路径
     UIBezierPath *path = [UIBezierPath bezierPath];
-    for (int i = 0; i < valueArray.count - 1; i ++) {
-        CGPoint p1 = [[_pointArray objectAtIndex:i] CGPointValue];
-        CGPoint p2 = [[_pointArray objectAtIndex:i+1] CGPointValue];
-        CGPoint p3 = [[_pointArray objectAtIndex:i+2] CGPointValue];
-        CGPoint p4 = [[_pointArray objectAtIndex:i+3] CGPointValue];
-        if (i == 0) {
-            [path moveToPoint:p2];
-        }
-        [self getControlPointx0:p1.x andy0:p1.y x1:p2.x andy1:p2.y x2:p3.x andy2:p3.y x3:p4.x andy3:p4.y path:path];
+//    //添加首尾点
+//    [_pointArray insertObject:[NSValue valueWithCGPoint:CGPointMake(0, CGRectGetHeight(self.bounds)/2.f)] atIndex:0];
+//    [_pointArray addObject:[NSValue valueWithCGPoint:CGPointMake(CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)/2.f)]];
+//    //画路径
+//    for (int i = 0; i < valueArray.count - 1; i ++) {
+//        CGPoint p1 = [[_pointArray objectAtIndex:i] CGPointValue];
+//        CGPoint p2 = [[_pointArray objectAtIndex:i+1] CGPointValue];
+//        CGPoint p3 = [[_pointArray objectAtIndex:i+2] CGPointValue];
+//        CGPoint p4 = [[_pointArray objectAtIndex:i+3] CGPointValue];
+//        if (i == 0) {
+//            [path moveToPoint:p2];
+//        }
+//        [self getControlPointx0:p1.x andy0:p1.y x1:p2.x andy1:p2.y x2:p3.x andy2:p3.y x3:p4.x andy3:p4.y path:path];
+//    }
+    [path moveToPoint:[_pointArray.firstObject CGPointValue]];
+    for (int i = 1; i < _pointArray.count; i ++) {
+        CGPoint prePoint = [_pointArray[i-1] CGPointValue];
+        CGPoint nowPoint = [_pointArray[i] CGPointValue];
+        [path addCurveToPoint:nowPoint controlPoint1:CGPointMake((prePoint.x+nowPoint.x)/2.f, prePoint.y) controlPoint2:CGPointMake((prePoint.x+nowPoint.x)/2.f, nowPoint.y)];
     }
     //绘制
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     lineLayer.path = path.CGPath;
+    lineLayer.shadowColor = [RGB(4, 179, 139) colorWithAlphaComponent:0.5].CGColor;
+    lineLayer.shadowOffset = CGSizeMake(0,1);
+    lineLayer.shadowOpacity = 1;
+    lineLayer.shadowRadius = 3;
     lineLayer.strokeColor = RGB(4, 179, 139).CGColor;
     lineLayer.fillColor = [[UIColor clearColor] CGColor];
     lineLayer.lineWidth = 2;
@@ -118,7 +128,7 @@ static CGFloat const mw = 30;
                        x2:(CGFloat)x2 andy2:(CGFloat)y2
                        x3:(CGFloat)x3 andy3:(CGFloat)y3
                      path:(UIBezierPath*) path{
-    CGFloat smooth_value =0.6;
+    CGFloat smooth_value = 0.6;
     CGFloat ctrl1_x;
     CGFloat ctrl1_y;
     CGFloat ctrl2_x;
@@ -148,12 +158,13 @@ static CGFloat const mw = 30;
 - (void)selectIndex:(NSInteger)index
 {
     if (!_flagLine) {
-        _flagLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, H(self))];
+        _flagLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, H(self)-mb)];
         _flagLine.backgroundColor = RGB(4, 179, 139);
         [self addSubview:_flagLine];
         
         _flagView = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 50)];
         _flagView.backgroundColor = [UIColor whiteColor];
+        _flagView.userInteractionEnabled = YES;
         _flagView.layer.cornerRadius = 5;
         _flagView.layer.masksToBounds = YES;
         _flagView.layer.borderColor = RGB(4, 179, 139).CGColor;
@@ -163,9 +174,11 @@ static CGFloat const mw = 30;
         _flagView.textColor = RGB(4, 179, 139);
         _flagView.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
         [self addSubview:_flagView];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(flagClickAction)];
+        [_flagView addGestureRecognizer:tap];
     }
     if (index > _dataArray.count - 1) return;
-    CGPoint currentPoint = [_pointArray[index + 1] CGPointValue];
+    CGPoint currentPoint = [_pointArray[index] CGPointValue];
     _flagLine.centerX = _flagView.centerX = currentPoint.x;
     if (_flagView.left < 0) _flagView.left = 0;
     if (_flagView.right > self.width) _flagView.right = self.width;
@@ -178,8 +191,16 @@ static CGFloat const mw = 30;
     _lastIndex = index;
 }
 
+- (void)flagClickAction
+{
+    if (_clickFlagBlock) {
+        _clickFlagBlock(_dataArray[_lastIndex]);
+    }
+}
+
 - (void)showFlagWithTouch:(UITouch *)touch
 {
+    if (touch.view == _flagView) return;
     CGPoint point = [touch locationInView:self];
     CGFloat spaceL = (W(self) - mw*2)/(MAX(1, _dataArray.count-1));
     //获取点击的索引，第一个点只有一半行距可点击，所以需要加上行距一半再计算
