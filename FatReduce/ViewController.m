@@ -66,6 +66,7 @@
     vc.editDic = editDic;
     vc.refreshBlock = ^{
         [self refreshWithIndex:self->_lastSelectBtn.tag-100];
+        [self.chartView selectLastPoint];
     };
     [self.navigationController pushViewController:vc animated:animated];
 }

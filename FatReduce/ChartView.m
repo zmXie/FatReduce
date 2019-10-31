@@ -112,6 +112,11 @@ static CGFloat const mw = 30;
     [self selectIndex:_lastIndex];
 }
 
+- (void)selectLastPoint
+{
+    [self selectIndex:_dataArray.count-1];
+}
+
 #pragma mark - Privite
 - (void)addTimeLabelWithText:(NSString *)text center:(CGPoint)center
 {
