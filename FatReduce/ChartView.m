@@ -177,7 +177,7 @@ static CGFloat const mw = 30;
         _flagView.textAlignment = 1;
         _flagView.numberOfLines = 0;
         _flagView.textColor = RGB(4, 179, 139);
-        _flagView.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
+        _flagView.font = [UIFont fontWithName:@"Arial Rounded MT Bold" size:15];
         [self addSubview:_flagView];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(flagClickAction)];
         [_flagView addGestureRecognizer:tap];
